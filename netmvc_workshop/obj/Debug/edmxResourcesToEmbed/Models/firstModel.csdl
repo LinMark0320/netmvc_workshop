@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BookdataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="booklist">
+    <Key>
+      <PropertyRef Name="BOOK_ID" />
+    </Key>
+    <Property Name="BOOK_ID" Type="Int32" Nullable="false" />
+    <Property Name="BOOK_NAME" Type="String" MaxLength="400" FixedLength="true" Unicode="true" />
+    <Property Name="BOOK_CLASS" Type="String" MaxLength="8" FixedLength="true" Unicode="true" />
+    <Property Name="BOOK_BOUGHT_DATE" Type="DateTime" Precision="7" />
+    <Property Name="BOOK_STATUS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BOOK_BORROW" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="BookdataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="booklist" EntityType="Self.booklist" />
+  </EntityContainer>
+</Schema>

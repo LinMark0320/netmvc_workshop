@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BookdataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="booklist">
+    <Key>
+      <PropertyRef Name="BOOK_ID" />
+    </Key>
+    <Property Name="BOOK_ID" Type="int" Nullable="false" />
+    <Property Name="BOOK_NAME" Type="nchar" MaxLength="400" />
+    <Property Name="BOOK_CLASS" Type="nchar" MaxLength="8" />
+    <Property Name="BOOK_BOUGHT_DATE" Type="datetime2" Precision="7" />
+    <Property Name="BOOK_STATUS" Type="char" MaxLength="1" />
+    <Property Name="BOOK_BORROW" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="BookdataModelStoreContainer">
+    <EntitySet Name="booklist" EntityType="Self.booklist" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<netmvc_workshop.Models.booklist>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BOOK_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BOOK_CLASS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BOOK_BOUGHT_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BOOK_STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BOOK_BORROW)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BOOK_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BOOK_CLASS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BOOK_BOUGHT_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BOOK_STATUS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BOOK_BORROW)
+        </td>
+        <td>
+            @Html.ActionLink("編輯", "Edit", new { BOOKID=item.BOOK_ID }) |
+            @*@Html.ActionLink("Details", "Details", new { BOOKID=item.BOOK_ID }) |*@
+            @Html.ActionLink("刪除", "Delete", new { BOOKID=item.BOOK_ID })
+        </td>
+    </tr>
+}
+
+</table>
